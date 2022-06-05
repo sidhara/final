@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 200px;
   pointer-events: none;
 }
 
@@ -13,9 +13,49 @@
   }
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+  height: 84vh;
+}
+
+.logout, .login{
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.header_title, .user_name, .user_email{
+  color: #61dafb;
+}
+
+.user_img{
+  border-radius: 50%;
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+}
+
+section{
+  width: 100%;
+  background-color: #61dafb;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.LogoutButton{
+  width: 70px;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
