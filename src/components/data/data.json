@@ -1,0 +1,37 @@
+[
+    {
+      "Id": 0,
+      "Product": "Flexbox",
+      "Price_Each": 25,
+      "In_Stock": 347,
+      "Total_Price": 8675
+    },
+    {
+        "Id": 1,
+        "Product": "Grid/Layout",
+        "Price_Each": 20,
+        "In_Stock": 421,
+        "Total_Price": 8420
+    },
+    {
+        "Id": 2,
+        "Product": "BootStrap",
+        "Price_Each": 25,
+        "In_Stock": 303,
+        "Total_Price": 7575
+    },
+    {
+        "Id": 3,
+        "Product": "Viewport",
+        "Price_Each": 50,
+        "In_Stock": 125,
+        "Total_Price": 6250
+    },
+    {
+        "Id": 4,
+        "Product": "Javascript",
+        "Price_Each": 76,
+        "In_Stock": 201,
+        "Total_Price": 15276
+    }
+  ]

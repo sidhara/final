@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import data from "../data/data.json"
 
 export const Table=()=>{
+
+    const [products, setProducts]=useState(data);
 
     return <div class="scroll">
         <table>
@@ -14,14 +17,17 @@ export const Table=()=>{
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {products.map((product)=>(
+                    <tr>
+                        <td>{product.Id}</td>
+                        <td>{product.Product}</td>
+                        <td>{product.Price_Each}</td>
+                        <td>{product.In_Stock}</td>
+                        <td>{product.Total_Price}</td>
+                    </tr>
+                ))}
             </tbody>
         </table>
     </div>
+    
 }

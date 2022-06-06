@@ -5,6 +5,7 @@ import {LogoutButton} from './components/Sidebar/Logout';
 import { Profile } from './components/Sidebar/Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Table } from './components/Section/Table';
+import { Orders} from './components/Section/Orders';
 
 function App() {
   const {isAuthenticated}=useAuth0();
@@ -29,12 +30,9 @@ function App() {
               <div className='table_container'>
                 <Table/>
               </div>
-              <div className='orders'>
-
-              </div>
+              <Orders/>
             </>):(<></>)
           }
-
         </section>
       </main>
     </div>
