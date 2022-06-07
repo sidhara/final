@@ -6,9 +6,15 @@ import { Profile } from './components/Sidebar/Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Table } from './components/Section/Table';
 import { Orders} from './components/Section/Orders';
+import data from "./components/data/data.json"
+import React, { useState } from "react";
 
 function App() {
   const {isAuthenticated}=useAuth0();
+  
+  const [products, setProducts]=useState(data);//initialization of the products in the json file
+  localStorage.setItem('products', JSON.stringify(products));
+
   return (
     <div className="App">
       <header className="App-header">

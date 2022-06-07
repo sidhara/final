@@ -1,9 +1,23 @@
-import React, { useState } from "react";
-import data from "../data/data.json"
+import { useState } from "react";
+import React from "react";
 
 export const Table=()=>{
 
-    const [products, setProducts]=useState(data);
+    var products=JSON.parse(localStorage.getItem('products'))
+
+    const [value, setValue] = useState();
+    const refresh = ()=>{
+        // refresh the component
+        setValue({});
+    }    
+
+    React.useEffect(()=>{//reload in submit case
+        var submit=document.getElementById('submit')
+        submit.addEventListener('click',(event)=>{
+            submit.click()//ignore this please, this is my "tf2 coconut". God I hate this language
+            refresh()
+        })
+    },[])
 
     return <div class="scroll">
         <table>
