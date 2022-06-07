@@ -7,6 +7,7 @@ export const Orders=()=>{
 
     React.useEffect(()=>{//this is after rendering the component
         var input=document.getElementById('input')
+        var submit=document.getElementById('submit')
         var selectedProductStock=products[0].In_Stock
 
         input.setAttribute("max", selectedProductStock);
@@ -26,6 +27,14 @@ export const Orders=()=>{
                 input.value=input.value.slice(0,input.value.length-1)
             }
         })
+
+        /*submit.addEventListener('click',(event)=>{//controlling the submit
+            if(input.value>selectedProductStock){
+                input.value=0
+                Window.alert("Error, not enough products in stock")
+            }
+        })*/
+
     }, [])
 
     return <div>
@@ -37,7 +46,7 @@ export const Orders=()=>{
                 ))}
             </select>
             <input id="input" min="1" type="number" placeholder="quantity" required/>
-            <input type="submit" value="Submit"/>
+            <input id="submit" type="submit" value="Submit"/>
         </div>
     </div>
 }
