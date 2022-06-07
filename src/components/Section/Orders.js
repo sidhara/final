@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import data from "../data/data.json"
+import swal from "sweetalert";
 
 
 export const Orders=()=>{
@@ -32,15 +33,10 @@ export const Orders=()=>{
         submit.addEventListener('click',(event)=>{//controlling the submit
             if(input.value>selectedProductStock){
                 input.value=0
-                alert()
+                swal("Error, not enough products in stock")
             }
         })
-
     }, [])
-
-    const alert=()=>{
-        alert("Error, not enough products in stock")
-    }
 
     return <div>
         <h1 className="orders_title">Orders</h1>
