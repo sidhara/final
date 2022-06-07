@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import data from "../data/data.json"
 
+
 export const Orders=()=>{
 
     const [products, setProducts]=useState(data);
@@ -28,14 +29,18 @@ export const Orders=()=>{
             }
         })
 
-        /*submit.addEventListener('click',(event)=>{//controlling the submit
+        submit.addEventListener('click',(event)=>{//controlling the submit
             if(input.value>selectedProductStock){
                 input.value=0
-                Window.alert("Error, not enough products in stock")
+                alert()
             }
-        })*/
+        })
 
     }, [])
+
+    const alert=()=>{
+        alert("Error, not enough products in stock")
+    }
 
     return <div>
         <h1 className="orders_title">Orders</h1>
