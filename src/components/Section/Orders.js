@@ -1,9 +1,16 @@
 import React from "react";
 import swal from "sweetalert";
+import { useState } from "react";
 
 export const Orders=()=>{
 
     var products=JSON.parse(localStorage.getItem('products'))
+
+    const [value, setValue] = useState();
+    const refresh = ()=>{
+        // refresh the component
+        setValue({});
+    }    
 
     React.useEffect(()=>{//this is after rendering the component
         var input=document.getElementById('input')
@@ -34,10 +41,22 @@ export const Orders=()=>{
             if(input.value>selectedProductStock){
                 input.value=0
                 swal("Error, not enough products in stock")
-            }else{
+            }else if(input.value==selectedProductStock){
+                swal("Order of "+products[selectedId].Product+" submited succesfully!")
+                products.splice(selectedId,1)
+                var x=0;
+                products.forEach(product => {
+                    product.Id=x;
+                    x=x+1
+                });
+                localStorage.setItem('products', JSON.stringify(products));
+                input.value=0
+                refresh()
+            }else if(input.value>0){
                 products[selectedId].In_Stock=products[selectedId].In_Stock-input.value
                 products[selectedId].Total_Price=products[selectedId].In_Stock*products[selectedId].Price_Each
                 localStorage.setItem('products', JSON.stringify(products));
+                swal("Order of "+products[selectedId].Product+" submited succesfully!")
                 input.value=0
             }
         })
@@ -56,15 +75,3 @@ export const Orders=()=>{
         </div>
     </div>
 }
-
-  /**
-    var testObject = { 'one': 1, 'two': 2, 'three': 3 };
-
-    // Put the object into storage
-    localStorage.setItem('testObject', JSON.stringify(testObject));
-
-    // Retrieve the object from storage
-    var retrievedObject = localStorage.getItem('testObject');
-
-    console.log('retrievedObject: ', JSON.parse(retrievedObject));
-   */
