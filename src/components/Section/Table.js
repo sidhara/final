@@ -17,6 +17,12 @@ export const Table=()=>{
             submit.click()//ignore this please, this is my "tf2 coconut". God I hate this language
             refresh()
         })
+
+        var submit2=document.getElementById('submit_resupply')
+        submit2.addEventListener('click',(event)=>{
+            submit2.click()//ignore this please, this is my "tf2 coconut". God I hate this language
+            refresh()
+        })
     },[])
 
     return <div class="scroll">

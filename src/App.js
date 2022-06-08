@@ -8,6 +8,7 @@ import { Table } from './components/Section/Table';
 import { Orders} from './components/Section/Orders';
 import data from "./components/data/data.json"
 import React, { useState } from "react";
+import { Resupply } from './components/Section/Resupply';
 
 function App() {
   const {isAuthenticated}=useAuth0();
@@ -37,6 +38,7 @@ function App() {
                 <Table/>
               </div>
               <Orders/>
+              <Resupply/>
             </>):(<></>)
           }
         </section>

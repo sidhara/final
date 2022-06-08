@@ -58,8 +58,6 @@ export const Orders=()=>{
                 localStorage.setItem('products', JSON.stringify(products));
                 swal("Order of "+products[selectedId].Product+" submited succesfully!")
                 input.value=0
-            }else{
-                swal("please specify a valid quantity")
             }
         })
     }, [])
