@@ -71,7 +71,7 @@ export const Orders=()=>{
                 ))}
             </select>
             <input id="input" min="1" type="number" placeholder="quantity" required/>
-            <input id="submit" type="submit" value="Submit"/>
+            <input className="submit" id="submit" type="submit" value="Submit"/>
         </div>
     </div>
 }

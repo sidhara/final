@@ -26,7 +26,7 @@ export const Table=()=>{
     },[])
 
     return <div class="scroll">
-        <table>
+        <table id="table">
             <thead>
                 <tr>
                     <th>Id</th>

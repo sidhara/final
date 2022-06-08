@@ -19,6 +19,14 @@ export const Resupply=()=>{
         var combobox=document.getElementById('combobox_resupply');
         var selectedId=combobox.value;
 
+        var change=document.getElementById('submit')
+        change.addEventListener('click',(event)=>{//<==this doesn't happen, don't know why
+            event.stopImmediatePropagation()
+            console.log('????')
+            products=JSON.parse(localStorage.getItem('products'))
+            refresh()
+        })
+
         submit.addEventListener('click',(event)=>{//controlling the submit
             event.stopImmediatePropagation()
             if(input.value>0){
@@ -29,15 +37,6 @@ export const Resupply=()=>{
                 input.value=0
             }
         })
-
-    
-        var change=document.getElementById('submit')
-        change.addEventListener('click',(event)=>{
-            console.log('????')
-            change.click()//ignore this please, this is my "tf2 coconut". God I hate this language
-            refresh()
-        })
-    
     }, [])
 
     return <div>
