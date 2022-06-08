@@ -29,6 +29,7 @@ export const Resupply=()=>{
         submit2.addEventListener('click',(event)=>{//controlling the submit
             event.stopImmediatePropagation()
             if(input.value>0){
+                selectedId=combobox.value
                 products[selectedId].In_Stock=parseInt(products[selectedId].In_Stock)+parseInt(input.value)
                 products[selectedId].Total_Price=products[selectedId].In_Stock*products[selectedId].Price_Each
                 localStorage.setItem('products', JSON.stringify(products));
