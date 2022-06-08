@@ -13,21 +13,20 @@ export const Resupply=()=>{
     }    
 
     React.useEffect(()=>{//this is after rendering the component
-        var input=document.getElementById('input_resupply')
-        var submit=document.getElementById('submit_resupply')
-
-        var combobox=document.getElementById('combobox_resupply');
-        var selectedId=combobox.value;
-
-        var change=document.getElementById('submit')
-        change.addEventListener('click',(event)=>{//<==this doesn't happen, don't know why
-            event.stopImmediatePropagation()
-            console.log('????')
+        var submit=document.getElementById('form')
+        submit.addEventListener('submit',(event)=>{//updating when there's an order
+            event.preventDefault()
             products=JSON.parse(localStorage.getItem('products'))
             refresh()
         })
 
-        submit.addEventListener('click',(event)=>{//controlling the submit
+        var input=document.getElementById('input_resupply')
+        var submit2=document.getElementById('submit_resupply')
+
+        var combobox=document.getElementById('combobox_resupply');
+        var selectedId=combobox.value;
+
+        submit2.addEventListener('click',(event)=>{//controlling the submit
             event.stopImmediatePropagation()
             if(input.value>0){
                 products[selectedId].In_Stock=parseInt(products[selectedId].In_Stock)+parseInt(input.value)
@@ -48,7 +47,9 @@ export const Resupply=()=>{
             ))}
         </select>
         <input id="input_resupply" min="1" type="number" placeholder="quantity" required/>
-        <input id="submit_resupply" type="submit" value="Submit"/>
+        <form id="form_resupply">
+            <input id="submit_resupply" type="submit" value="Submit"/>
+        </form>
     </div>
 </div>
 }

@@ -60,6 +60,13 @@ export const Orders=()=>{
                 input.value=0
             }
         })
+
+        var submit2=document.getElementById('form_resupply')
+        submit2.addEventListener('submit',(event)=>{//updating when there's an resupply
+            event.preventDefault()
+            products=JSON.parse(localStorage.getItem('products'))
+            refresh()
+        })
     }, [])
 
     return <div>
@@ -71,7 +78,10 @@ export const Orders=()=>{
                 ))}
             </select>
             <input id="input" min="1" type="number" placeholder="quantity" required/>
-            <input className="submit" id="submit" type="submit" value="Submit"/>
+            <form id="form">
+                <input className="submit" id="submit" type="submit" value="Submit"/>
+            </form>
+            
         </div>
     </div>
 }
