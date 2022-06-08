@@ -20,6 +20,14 @@ export const Resupply=()=>{
             refresh()
         })
 
+        var submit3=document.getElementById('form_supply')
+        submit3.addEventListener('submit',(event)=>{//updating when there's an supply
+            console.log('???!!!')// <==this does not happen
+            event.preventDefault()
+            products=JSON.parse(localStorage.getItem('products'))
+            refresh()
+        })
+
         var input=document.getElementById('input_resupply')
         var submit2=document.getElementById('submit_resupply')
 
@@ -40,14 +48,14 @@ export const Resupply=()=>{
     }, [])
 
     return <div>
-    <h1 className="orders_title">Resupply</h1>
-    <div className="orders_container">
+    <h1 className="resupply_title">Resupply</h1>
+    <div className="resupply_container">
         <select id="combobox_resupply" name="Products">
             {products.map((product)=>(
                 <option value={product.Id}>{product.Product}</option>
             ))}
         </select>
-        <input id="input_resupply" min="1" type="number" placeholder="quantity" required/>
+        <input id="input_resupply" min="1" type="number" placeholder="Quantity" required/>
         <form id="form_resupply">
             <input id="submit_resupply" type="submit" value="Submit"/>
         </form>

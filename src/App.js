@@ -9,6 +9,7 @@ import { Orders} from './components/Section/Orders';
 import data from "./components/data/data.json"
 import React, { useState } from "react";
 import { Resupply } from './components/Section/Resupply';
+import { Supply } from './components/Section/Supply';
 
 function App() {
   const {isAuthenticated}=useAuth0();
@@ -37,8 +38,13 @@ function App() {
               <div className='table_container'>
                 <Table/>
               </div>
-              <Orders/>
-              <Resupply/>
+              <div className='management_container'>
+              <Supply/>
+                <div>
+                  <Orders/>
+                  <Resupply/>
+                </div>
+              </div>
             </>):(<></>)
           }
         </section>

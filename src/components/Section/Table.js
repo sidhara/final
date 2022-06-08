@@ -23,6 +23,12 @@ export const Table=()=>{
             submit2.click()//ignore this please, this is my "tf2 coconut". God I hate this language
             refresh()
         })
+
+        var submit3=document.getElementById('submit_supply')
+        submit3.addEventListener('click',(event)=>{
+            submit3.click()//ignore this please, this is my "tf2 coconut". God I hate this language
+            refresh()
+        })
     },[])
 
     return <div class="scroll">

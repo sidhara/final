@@ -67,6 +67,14 @@ export const Orders=()=>{
             products=JSON.parse(localStorage.getItem('products'))
             refresh()
         })
+
+        var submit3=document.getElementById('form_supply')
+        submit3.addEventListener('submit',(event)=>{//updating when there's a supply 
+            console.log('help')// <==this does not happen
+            event.preventDefault()
+            products=JSON.parse(localStorage.getItem('products'))
+            refresh()
+        })
     }, [])
 
     return <div>
@@ -77,9 +85,9 @@ export const Orders=()=>{
                     <option value={product.Id}>{product.Product}</option>
                 ))}
             </select>
-            <input id="input" min="1" type="number" placeholder="quantity" required/>
+            <input id="input" min="1" type="number" placeholder="Quantity" required/>
             <form id="form">
-                <input className="submit" id="submit" type="submit" value="Submit"/>
+                <input id="submit" type="submit" value="Submit"/>
             </form>
             
         </div>

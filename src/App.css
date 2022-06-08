@@ -116,16 +116,24 @@ td {
   width: calc(100vw - 200px - 48px);
 }
 
-/*css for the orders and resupply*/
+/*css for the orders, supply and resupply*/
 
-.orders_title{
+.orders_title, .resupply_title, .supply_title{
   color: #282c34;
   font-size: 35px;
   margin: 5px;
 }
 
 input{
-  width: 125px;
+  width: 135px;
+}
+
+.input_supply_product{
+  width: 235px;
+}
+
+.submit_supply{
+  width: 255px;
 }
 
 select, input{
@@ -134,7 +142,22 @@ select, input{
   background-color: rgb(205, 235, 253);
 }
 
-.orders_container{
+.orders_container, .resupply_container, .supply_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+}
+
+.supply_container_sup{
+ display: flex;
+ flex-direction: column;
+ gap: 25px;
+}
+
+/*css for the management container*/
+
+.management_container{
   display: flex;
   flex-direction: row;
   justify-content: center;
