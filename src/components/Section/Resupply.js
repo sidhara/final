@@ -13,20 +13,6 @@ export const Resupply=()=>{
     }    
 
     React.useEffect(()=>{//this is after rendering the component
-        var submit=document.getElementById('form')
-        submit.addEventListener('submit',(event)=>{//updating when there's an order
-            event.preventDefault()
-            products=JSON.parse(localStorage.getItem('products'))
-            refresh()
-        })
-
-        var submit3=document.getElementById('form_supply')
-        submit3.addEventListener('submit',(event)=>{//updating when there's an supply
-            console.log('???!!!')// <==this does not happen
-            event.preventDefault()
-            products=JSON.parse(localStorage.getItem('products'))
-            refresh()
-        })
 
         var input=document.getElementById('input_resupply')
         var submit2=document.getElementById('submit_resupply')
@@ -35,6 +21,7 @@ export const Resupply=()=>{
         var selectedId=combobox.value;
 
         submit2.addEventListener('click',(event)=>{//controlling the submit
+            products=JSON.parse(localStorage.getItem('products'))
             event.stopImmediatePropagation()
             if(input.value>0){
                 selectedId=combobox.value
@@ -44,6 +31,20 @@ export const Resupply=()=>{
                 swal("Resupply of "+products[selectedId].Product+" submited succesfully!")
                 input.value=0
             }
+        })
+
+        var submit=document.getElementById('form')
+        submit.addEventListener('submit',(event)=>{//updating when there's an order
+            event.preventDefault()
+            products=JSON.parse(localStorage.getItem('products'))
+            refresh()
+        })
+
+        var submit3=document.getElementById('submit_supply')
+        submit3.addEventListener('blur',(event)=>{//updating when there's an supply
+            event.preventDefault()
+            products=JSON.parse(localStorage.getItem('products'))
+            refresh()
         })
     }, [])
 

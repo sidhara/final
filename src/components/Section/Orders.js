@@ -37,6 +37,7 @@ export const Orders=()=>{
         })
 
         submit.addEventListener('click',(event)=>{//controlling the submit
+            products=JSON.parse(localStorage.getItem('products'))
             event.stopImmediatePropagation()
             if(input.value>selectedProductStock){
                 input.value=0
@@ -68,9 +69,8 @@ export const Orders=()=>{
             refresh()
         })
 
-        var submit3=document.getElementById('form_supply')
-        submit3.addEventListener('submit',(event)=>{//updating when there's a supply 
-            console.log('help')// <==this does not happen
+        var submit3=document.getElementById('submit_supply')
+        submit3.addEventListener('blur',(event)=>{//updating when there's a supply
             event.preventDefault()
             products=JSON.parse(localStorage.getItem('products'))
             refresh()
