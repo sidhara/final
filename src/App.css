@@ -113,7 +113,6 @@ td {
 .scroll{
   overflow:scroll;
   height: 40vh;
-  width: calc(100vw - 200px - 48px);
 }
 
 /*css for the orders, supply and resupply*/
@@ -162,4 +161,189 @@ select, input{
   flex-direction: row;
   justify-content: center;
   gap: 50px;
+}
+
+/*BEGIN MEDIAQUERIES*/
+@media (min-width:540px) and (max-width: 1280px){
+
+  aside{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+  }
+  aside > img{
+    display: none;
+  }
+  main{
+    flex-direction: column;
+  }
+  select, input,td,th{
+
+    font-size: 22px;
+
+  }
+
+.management_container{
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+  .header_title, .user_name, .user_email{
+    color: #61dafb;
+  }
+
+  .user_img{
+    border-radius: 50%;
+  }
+
+  .LogoutButton{
+    width: 70px;
+  }
+
+  .logout, .login{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+
+
+}
+
+@media (min-width:381px) and (max-width: 653px){
+
+  aside{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+  }
+  aside > img {
+    display: none;
+  }
+
+  main{
+    flex-direction: column;
+  }
+  input{
+
+    font-size: 15px;
+    width: 100px;
+
+  }
+  select{
+    width: 90px;
+    font-size: 15px;
+  }
+  .scroll{
+    height: 30vh;
+  }
+  
+
+td,th {
+  font-size: 15px;
+  width: 50px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.orders_title, .resupply_title, .supply_title{
+  color: #282c34;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.management_container{
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+  .header_title, .user_name, .user_email{
+    color: #61dafb;
+  }
+
+  .user_img{
+    border-radius: 50%;
+  }
+
+  .LogoutButton{
+    width: 70px;
+  }
+
+  .logout, .login{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+  .input_supply_product{
+    width: 100px;
+  }
+
+  .submit_supply{
+    width: 100px;
+  }
+}
+
+@media (min-width:300px) and (max-width: 380px){
+
+  aside{
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+  }
+  aside > img {
+    display: none;
+  }
+
+  main{
+    flex-direction: column;
+  }
+  select, input,td,th{
+
+    font-size: 9px;
+    width: 50px;
+
+  }
+  .input_supply_product{
+    width: 135px;
+  }
+  .submit_supply{
+    width: 135px;
+  }
+  .scroll{
+    height: 20vh;
+  }
+  
+
+h1 {
+  font-size: 25px;
+}
+
+.orders_title, .resupply_title, .supply_title{
+  color: #282c34;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.management_container{
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+  .header_title, .user_name, .user_email{
+    color: #61dafb;
+  }
+
+  .user_img{
+    border-radius: 50%;
+  }
+
+  .LogoutButton{
+    width: 70px;
+  }
+
+  .logout, .login{
+    width: 70px;
+    margin-bottom: 10px;
+  }
 }
