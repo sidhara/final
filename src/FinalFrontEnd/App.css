@@ -1,0 +1,349 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 200px;
+  pointer-events: none;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 100px);
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*css for the profile*/
+
+aside{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+}
+
+.header_title, .user_name, .user_email{
+  color: #61dafb;
+}
+
+.user_img{
+  border-radius: 50%;
+}
+
+.LogoutButton{
+  width: 70px;
+}
+
+.logout, .login{
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+/*css for the section*/
+
+section{
+  width: 100%;
+  background-color: #61dafb;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+/*css for the table*/
+
+.table_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+  font-size: 32px;
+}
+
+th {
+  background-color: rgb(117, 201, 250);
+}
+
+td {
+  background-color: rgb(205, 235, 253);
+}
+
+.scroll{
+  overflow:scroll;
+  height: 40vh;
+}
+
+/*css for the orders, supply and resupply*/
+
+.orders_title, .resupply_title, .supply_title{
+  color: #282c34;
+  font-size: 35px;
+  margin: 5px;
+}
+
+input{
+  width: 135px;
+}
+
+.input_supply_product{
+  width: 235px;
+}
+
+.submit_supply{
+  width: 255px;
+}
+
+select, input{
+  padding: 8px;
+  font-size: 32px;
+  background-color: rgb(205, 235, 253);
+}
+
+.orders_container, .resupply_container, .supply_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+}
+
+.supply_container_sup{
+ display: flex;
+ flex-direction: column;
+ gap: 25px;
+}
+
+/*css for the management container*/
+
+.management_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+
+/*BEGIN MEDIAQUERIES*/
+@media (min-width:540px) and (max-width: 1280px){
+
+  aside{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+  }
+  aside > img{
+    display: none;
+  }
+  main{
+    flex-direction: column;
+  }
+  select, input,td,th{
+
+    font-size: 22px;
+
+  }
+
+.management_container{
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+  .header_title, .user_name, .user_email{
+    color: #61dafb;
+  }
+
+  .user_img{
+    border-radius: 50%;
+  }
+
+  .LogoutButton{
+    width: 70px;
+  }
+
+  .logout, .login{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+
+
+}
+
+@media (min-width:381px) and (max-width: 653px){
+
+  aside{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+  }
+  aside > img {
+    display: none;
+  }
+
+  main{
+    flex-direction: column;
+  }
+  input{
+
+    font-size: 15px;
+    width: 100px;
+
+  }
+  select{
+    width: 90px;
+    font-size: 15px;
+  }
+  .scroll{
+    height: 30vh;
+  }
+  
+
+td,th {
+  font-size: 15px;
+  width: 50px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.orders_title, .resupply_title, .supply_title{
+  color: #282c34;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.management_container{
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+  .header_title, .user_name, .user_email{
+    color: #61dafb;
+  }
+
+  .user_img{
+    border-radius: 50%;
+  }
+
+  .LogoutButton{
+    width: 70px;
+  }
+
+  .logout, .login{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
+  .input_supply_product{
+    width: 100px;
+  }
+
+  .submit_supply{
+    width: 100px;
+  }
+}
+
+@media (min-width:300px) and (max-width: 380px){
+
+  aside{
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 3% 0;
+  }
+  aside > img {
+    display: none;
+  }
+
+  main{
+    flex-direction: column;
+  }
+  select, input,td,th{
+
+    font-size: 9px;
+    width: 50px;
+
+  }
+  .input_supply_product{
+    width: 135px;
+  }
+  .submit_supply{
+    width: 135px;
+  }
+  .scroll{
+    height: 20vh;
+  }
+  
+
+h1 {
+  font-size: 25px;
+}
+
+.orders_title, .resupply_title, .supply_title{
+  color: #282c34;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.management_container{
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+  .header_title, .user_name, .user_email{
+    color: #61dafb;
+  }
+
+  .user_img{
+    border-radius: 50%;
+  }
+
+  .LogoutButton{
+    width: 70px;
+  }
+
+  .logout, .login{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+}
